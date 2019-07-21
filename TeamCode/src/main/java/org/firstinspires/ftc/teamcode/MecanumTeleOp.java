@@ -29,7 +29,7 @@ public class MecanumTeleOp extends OpMode {
 
     public void loop() {
         if (Math.abs(gamepad1.right_stick_x) < 0.25) {
-            arcadeDrive.drive(gamepad1.left_stick_y, gamepad1.left_stick_x);
+            arcadeDrive.drive(gamepad1.left_stick_x, gamepad1.left_stick_y);
         }
         else {
             strafeDrive.setPower(gamepad1.right_stick_x);

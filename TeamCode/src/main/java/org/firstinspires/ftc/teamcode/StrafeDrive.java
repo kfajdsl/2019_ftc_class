@@ -10,7 +10,7 @@ public class StrafeDrive {
     }
 
     public void setPower(float speed) {
-        strafeLeft.setPower(-speed);
+        strafeLeft.setPower(speed);
         strafeRight.setPower(speed);
     }
 
