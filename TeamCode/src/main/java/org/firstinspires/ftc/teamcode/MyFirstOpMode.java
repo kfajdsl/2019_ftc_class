@@ -26,15 +26,10 @@ public class MyFirstOpMode extends OpMode {
     public void loop() {
 
         if (gamepad1.a) {
-           switch (dpadOn) {
-               case true:
-                   dpadOn = false;
-                   break;
-               case false:
-                   dpadOn = true;
-                   break;
-               default:
-                   break;
+           if (dpadOn) {
+               dpadOn = false;
+           } else {
+               dpadOn = true;
            }
        }
 

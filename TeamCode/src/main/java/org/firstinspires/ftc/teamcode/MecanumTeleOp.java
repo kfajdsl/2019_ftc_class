@@ -1,4 +1,4 @@
-package org.ftcinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.*;
 import com.qualcomm.robotcore.hardware.*;
@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.*;
 public class MecanumTeleOp extends OpMode {
 
     private DcMotor frontLeft, frontRight, backLeft, backRight;
-    privae MotorGroup groupLeft, groupRight;
+    private MotorGroup groupLeft, groupRight;
 
     public void init() {
         frontLeft = hardwareMap.dcMotor.get("drive_fL");
