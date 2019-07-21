@@ -2,16 +2,16 @@ package org.firstinspires.ftc.teamcode;
 
 public class StrafeDrive {
 
-    private MotorGroup strafeLeft, strafeRight;
+    private MotorGroup strafeFront, strafeBack;
 
-    public StrafeDrive(MotorGroup diagLeft, MotorGroup diagRight) {
-        strafeLeft = diagLeft;
-        strafeRight = diagRight;
+    public StrafeDrive(MotorGroup back, MotorGroup front) {
+        strafeFront = back;
+        strafeBack = front;
     }
 
-    public void setPower(float speed) {
-        strafeLeft.setPower(speed);
-        strafeRight.setPower(speed);
+    public void drive(float speed) {
+        strafeFront.setPower(speed);
+        strafeBack.setPower(-speed);
     }
 
 }

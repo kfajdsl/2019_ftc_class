@@ -8,7 +8,7 @@ public class MecanumTeleOp extends OpMode {
 
     private DcMotor frontLeft, frontRight, backLeft, backRight;
     private MotorGroup groupLeft, groupRight;
-    private MotorGroup strafeLeft, strafeRight;
+    private MotorGroup strafeFront, strafeBack;
     private ArcadeDrive arcadeDrive;
     private StrafeDrive strafeDrive;
 
@@ -20,11 +20,11 @@ public class MecanumTeleOp extends OpMode {
 
         groupLeft = new MotorGroup(new DcMotor[] {frontLeft, backLeft});
         groupRight = new MotorGroup(new DcMotor[] {frontRight, backRight});
-        strafeLeft = new MotorGroup(new DcMotor[] {backLeft, frontRight});
-        strafeRight = new MotorGroup(new DcMotor[] {backRight, frontLeft});
+        strafeBack = new MotorGroup(new DcMotor[] {backLeft, backRight});
+        strafeFront = new MotorGroup(new DcMotor[] {frontLeft, frontRight});
 
         arcadeDrive = new ArcadeDrive(groupLeft, groupRight);
-        strafeDrive = new StrafeDrive(strafeLeft, strafeRight);
+        strafeDrive = new StrafeDrive(strafeFront, strafeBack);
     }
 
     public void loop() {
@@ -32,7 +32,7 @@ public class MecanumTeleOp extends OpMode {
             arcadeDrive.drive(gamepad1.left_stick_x, gamepad1.left_stick_y);
         }
         else {
-            strafeDrive.setPower(gamepad1.right_stick_x);
+            strafeDrive.drive(gamepad1.right_stick_x);
         }
 
     }
